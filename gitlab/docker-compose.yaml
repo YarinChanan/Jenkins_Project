@@ -1,0 +1,18 @@
+version: '3.6'
+services:
+  gitlab:
+    image: gitlab/gitlab-ee:16.5.8-ee.0
+    container_name: gitlab
+    restart: always
+    hostname: '18.206.86.253'
+    environment:
+      GITLAB_OMNIBUS_CONFIG: |
+        external_url 'http://18.206.86.253/'
+    ports:
+      - '80:80'
+      - '443:443'
+    volumes:
+      - "./gitlab_volume/config:/etc/gitlab"
+      - "./gitlab_volume/logs:/var/log/gitlab"
+      - "./gitlab_volume/data:/var/opt/gitlab"
+    shm_size: '256m'
