@@ -4,7 +4,7 @@ services:
   web:
     image: 'gitlab/gitlab-ce:latest'
     restart: always
-    hostname: '54.159.94.246'
+    hostname: '52.49.119.204'
     environment:
       GITLAB_OMNIBUS_CONFIG: |
         external_url 'http://54.159.94.246'
